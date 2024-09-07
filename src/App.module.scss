@@ -1,0 +1,120 @@
+:root {
+    --green: rgb(6, 187, 6);
+    --gray: gray;
+    --background-color: rgb(5, 5, 5);
+    --background-color-key: rgb(15, 15, 15);
+    --white: rgb(240, 240, 240);
+    --C-key-color: #c53333;
+}
+
+.App {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .App-container {
+        width: 300px;
+        // background-color: rgb(100, 100, 100);
+        background-color: var(--background-color);
+        
+        border-radius: 5px;
+        box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.344);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        .result-display-section {
+            margin-top: 20px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            textarea {
+                width: 100%;
+                text-align: right;
+                outline: none;
+                resize: none;
+                background-color: transparent;
+                border: none;
+                color: rgb(240, 240, 240);
+                padding-right: 20px;
+                font-size: 1.6rem;
+                caret-color: aqua;
+                flex: 2;
+            }
+            div {
+                height: 40px;
+                font-size: 1.3rem;
+                line-height: 40px;
+                text-align: right;
+                padding-right: 20px;
+                color: var(--gray);
+                margin-bottom: 5px;
+            }
+        }
+        .controler-section {
+            display: flex;
+            justify-content: space-between;
+            height: 60px;
+            border-bottom: 1px solid rgba(184, 184, 184, .4);
+            .tools {
+                display: flex;
+                align-items: center;
+                column-gap: 25px;
+                margin-left: 30px;
+
+                * {
+                    color: var(--gray);
+                    font-size: 1.5rem;
+                    display: flex;
+                }
+            }
+            .delete {
+                color: var(--green);
+                margin-right: 30px;
+                display: flex;
+                align-items: center;
+                font-size: 1.5rem;
+            }
+        }
+        .keypad-container {
+            margin: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            * {
+                aspect-ratio: 1 / 1;
+                margin: 5px;
+                border-radius: 50%;
+                background-color: var(--background-color-key);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.4rem;
+            }
+            .operator {
+                color: var(--green);
+            }
+            .digit, .dot, .plus-minus, .equal {
+                color: var(--white);
+            }
+            .equal {
+                background-color: var(--green);
+                * {
+                    background-color: inherit;
+                }
+            }
+            .dot {
+                * {
+                    position: relative;
+                    top: 8px;
+                }
+            }
+            .C-key {
+                color: var(--C-key-color);
+            }
+            
+        }
+    }
+
+}
