@@ -1,5 +1,4 @@
-let textareaValue = '123+3*'
+const str = '2342243294432;;sd223rfds+3232.-131.92 ';
+const lastNumber = str.match(/-?\d+(\.\d+)?(?=\s*$)/);
 
-
-console.log(textareaValue.slice(0, textareaValue.length - 1));
-
+console.log(lastNumber ? lastNumber[0] : ''); 
